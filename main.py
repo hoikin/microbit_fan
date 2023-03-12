@@ -16,7 +16,10 @@ def getTemp2():
     temp = input.temperature()
 def getTemp():
     global temp
-    temp = pins.analog_read_pin(AnalogPin.P0)
+    dht11.set_pin(DigitalPin.P8)
+    dht11.read_from_sensor()
+    temp = dht11.temperature()
+    
 rotated = 0
 temp = 0
 # let temp = 0
@@ -24,7 +27,7 @@ basic.show_icon(IconNames.DIAMOND)
 
 def on_forever():
     global rotated
-    getTemp2()
+    getTemp()
     basic.show_number(temp)
     basic.pause(250)
     if temp >= 30:
@@ -35,4 +38,3 @@ def on_forever():
     elif temp <= 29:
         rotated = 0
 basic.forever(on_forever)
-

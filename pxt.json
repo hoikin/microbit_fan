@@ -3,11 +3,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "microphone": "*",
-        "monitors": "github:hoikin/pxt-monitors#b76ec19c59dbee253d895a75ba13b21ac6b7c13e",
-        "ds18b20": "github:DFRobot/pxt-ds18b20#v0.1.0",
-        "pxt-DHT11_DHT22": "github:alankrantas/pxt-DHT11_DHT22#v0.0.3"
+        "dht11": "github:zhuning239/DHT11#e9d152762eda31cce33d4c1fd4b85b5854459385"
     },
     "files": [
         "main.blocks",
@@ -29,5 +25,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }

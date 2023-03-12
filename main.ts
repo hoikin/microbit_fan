@@ -15,21 +15,15 @@ function getTemp2 () {
     temp = input.temperature()
 }
 function getTemp () {
-    dht11_dht22.queryData(
-    DHTtype.DHT11,
-    DigitalPin.P0,
-    true,
-    false,
-    true
-    )
-    temp = dht11_dht22.readData(dataType.temperature)
+    dht11.set_pin(DigitalPin.P8)
+    temp = dht11.temperature()
 }
 let rotated = 0
 let temp = 0
 // let temp = 0
 basic.showIcon(IconNames.Diamond)
 basic.forever(function () {
-    getTemp()
+    getTemp2()
     basic.showNumber(temp)
     basic.pause(250)
     if (temp >= 30) {
